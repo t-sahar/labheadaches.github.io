@@ -86,8 +86,26 @@ body {
     background-color: #333333;
 }
 
-/* Keeps the logo black and not a blue link */
+/* ------------------------------------------------------------------------------------ */
+/* 5. Keeps the logo black and not a blue link */
 a.logo {
     color: #111111;
     text-decoration: none;
+}
+
+/* ------------------------------------------------------------------------------------ */
+/* 6. Footer Layout Styling */
+.site-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 40px;
+    background-color: #ffffff;
+    border-top: 1px solid #eaeaea;
+    margin-top: auto; /* Helps push the footer down if the page grows */
+}
+
+.site-footer p {
+    color: #666666;
+    font-size: 0.9rem;
 }
