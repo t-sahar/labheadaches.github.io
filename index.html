@@ -1,6 +1,6 @@
 <!-- How to Save
  git add index.html
- git commit -m "Updated layout to a clean homepage structure"
+ git commit -m "[whatever changes you made]"
  git push -->
 <!DOCTYPE html>
 <html lang="en">
@@ -15,19 +15,22 @@
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar">
-        <div class="logo">MySite</div>
+        <a href="index.html" class="logo">MySite</a>    <!-- makes the logo clickable -->
+
+        <div class="nav-links">    <!-- these point to pages I can create later in the same folder -->
         <div class="nav-links">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Lab Desensitisation</a>
+            <a href="index.html">Home</a>
+            <a href="archive.html">Archive</a>
+            <a href="labdesensitisation.html">Lab Desensitisation</a>
         </div>
     </nav>
+
         <!-- Main Content Container -->
     <main class="container">
         <section class="hero">
             <h1>Lab Headaches</h1> <!-- use one h1 per page -->
             <p class="bio">I can possibly guarantee that no heads shall ache when reading through this website.</p>
-            <a href="#" class="cta-button">Get In Touch</a>
+            <a href="https://www.linkedin.com/in/tabassum-sahar/" class="cta-button">Contact Me</a>
         </section>
     </main>
 </body>
