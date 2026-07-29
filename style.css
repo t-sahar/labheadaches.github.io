@@ -7,24 +7,42 @@
     font-family: system-ui, -apple-system, sans-serif;
 }
 
+:root {
+    --blue: #1B2A4A;
+    --cream: #FFF8E8;
+    --white: #FFFFFF;
+    --paper: #EDD1B0;
+    --green: #7D9D85;
+    --black: #333333;
+    --lblue: #3A86FF;
+    --brown: #4A3A32;
+}
+
 body {
-    background-color: #f4e4bc;
-    color: #222222;
+    background-color: var(--paper);
+    color: var(--black);
     line-height: 1.6;
 }
 
 /* ------------------------------------------------------------------------------------ */
 /* 2. Navigation Bar Styling */
+.navbar,
+.site-footer {
+    background-color: var(--brown);
+    color: var(--cream);
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
-    background-color: #ffffff;
-    border-bottom: 1px solid #eaeaea;
+    padding: 16px 40px;
+    border-bottom: none;
 }
 
 .logo {
+    color: var(--cream);
+    text-decoration: none;
     font-weight: 700;
     font-size: 1.2rem;
     letter-spacing: -0.5px;
@@ -32,49 +50,48 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    color: #000000;
+    color:var(--cream);
     margin-left: 20px;
     font-weight: 500;
     transition: color 0.2s ease;
 }
 
 .nav-links a:hover {
-    color: #000000;
+    color: var(--cream);
+    opacity: 0.8;
 }
 
 /* ------------------------------------------------------------------------------------ */
 /* 3. Main Layout Container */
 .container {
-    max-width: 800px;
-    margin: 80px auto;
-    padding: 0 20px;
+    max-width: 1200px;
+    width: 95%;
+    margin: 0 auto;
 }
 
 /* ------------------------------------------------------------------------------------ */
 /* 4. Text & Button Styling */
 .hero h1 {
-    font-size: 3rem;
+    font-size: clamp(2.2rem, 5vw, 3rem);
     font-weight: 800;
     margin-bottom: 10px;
     letter-spacing: -1px;
 }
 
-.subtitle {
-    font-size: 1.4rem;
-    color: #555555;
-    margin-bottom: 25px;
+.hero {
+    padding: 60px 0;
 }
 
 .bio {
     font-size: 1.1rem;
-    color: #000000;
+    color: var(--black);
     margin-bottom: 40px;
 }
 
 .cta-button {
     display: inline-block;
-    background-color: #111111;
-    color: #ffffff;
+    background-color: var(--green);
+    color: var(--cream);
     text-decoration: none;
     padding: 12px 24px;
     border-radius: 6px;
@@ -82,30 +99,134 @@ body {
     transition: background-color 0.2s ease;
 }
 
-.cta-button:hover {
-    background-color: #333333;
+.cta-button:hover,
+.cta-button:focus {
+    background-color: #688671;
 }
 
 /* ------------------------------------------------------------------------------------ */
-/* 5. Keeps the logo black and not a blue link */
-a.logo {
-    color: #111111;
-    text-decoration: none;
-}
+/* 5. Header & Footer Layout Styling */
 
-/* ------------------------------------------------------------------------------------ */
-/* 6. Footer Layout Styling */
 .site-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 40px;
-    background-color: #ffffff;
-    border-top: 1px solid #eaeaea;
-    margin-top: auto; /* Helps push the footer down if the page grows */
+    padding: 16px 40px;
+    border-top: none;
+    margin-top: auto;
 }
 
 .site-footer p {
-    color: #666666;
+    color: var(--cream);
     font-size: 0.9rem;
+}
+
+/* ------------------------------------------------------------------------------------ */
+/* 6. Article Cards */
+
+.articles {
+    display: flex;
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.article-card {
+    background-color: var(--cream);
+    border-radius: 12px;
+    overflow: hidden;                   /* makes image also rounded */
+    width: 300px;
+    text-decoration: none;
+    color: var(--black);
+    transition: transform 0.2s ease;
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+}
+
+.article-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;                  /* so image will not stretch */
+}
+
+.article-content {
+    padding: 20px;
+}
+
+.article-content h3 {
+    font-size: 1.3rem;
+    margin: 0 0 10px;
+    color: var(--black);
+}
+
+.article-content p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #6B6258;
+    line-height: 1.5;
+}
+
+.article-card h3,
+.article-card p {
+    color: inherit;
+}
+
+.article-date {
+    display: block;
+    text-align: right;
+    margin-top: 15px;
+    font-size: 0.8rem;
+    color: #8A7B6D;
+}
+
+/* ------------------------------------------------------------------------------------ */
+/* 7. Dividers */
+
+hr {
+  border: none;               /* Removes the default ugly browser style */
+  height: 1px;               /* Keeps the divider crisp and thin */
+  background-color: var(--brown); /* Matches your pale card border color */
+  margin: 30px 0;            /* Adds a clean 30px spacing above and below the line */
+}
+
+/* ------------------------------------------------------------------------------------ */
+/* 8. Article Pages */
+
+.article-page {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: var(--cream);
+    padding: 40px;
+    border-radius: 12px;
+}
+
+.article-page h1 {
+    font-size: 2.5rem;
+    color: var(--black);
+    margin-bottom: 10px;
+}
+
+.article-page .article-date {
+    text-align: right;
+    margin-bottom: 30px;
+    color: #8A7B6D;
+    font-size: 0.85rem;
+}
+
+.article-image {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+.article-text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #4A4540;
+}
+
+.article-text h2 {
+    margin-top: 35px;
+    color: var(--black);
 }
