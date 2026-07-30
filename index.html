@@ -15,6 +15,7 @@
 
 <!-- ------------------------------------------------------------------------------------ -->
 <body>
+
     <!-- Navigation Bar -->
     <nav class="navbar">
         <a href="index.html" class="logo">Lab Headaches</a>    <!-- makes the logo clickable -->
@@ -24,6 +25,7 @@
             <a href="labdesensitisation.html">Lab Desensitisation</a>
         </div>
     </nav>
+
     <!-- --------------------------------------- -->
     <!-- Main Content Container -->
     <main class="container">
@@ -32,46 +34,42 @@
             <p class="bio">I can possibly guarantee that no heads shall ache when reading through this website.</p>
 
             <hr>
+            
+            <!-- Search Feature -->
+            <input 
+            type="text" 
+            id="search-box" 
+            placeholder="Search articles..."
+            >
 
-            <h1>Featured</h1> <!-- use one h1 per page -->
-                <section class="articles">
-                    <a href="king-car-park.html" class="article-card">
-                        <img src="king-car-park.jpg" alt="Article thumbnail">
-                        <div class="article-content">
-                            <h3>How to Find a King Under a Car Park</h3>
-                            <p>And he was there for x years.</p>
-                            <span class="article-date">29/07/2026</span>
-                        </div>
-                    </a>
-                    <a href="article2.html" class="article-card">
-                        <img src="images/article2.jpg" alt="Article thumbnail">
-                        <div class="article-content">
-                            <h3>My First Article Title</h3>
-                            <p>A short description of another interesting article.</p>
-                            <span class="article-date">29/07/2026</span>
-                        </div>
-                    </a>
-                    <a href="article3.html" class="article-card">
-                        <img src="images/article3.jpg" alt="Article thumbnail">
-                        <div class="article-content">
-                            <h3>My First Article Title</h3>
-                            <p>A quick summary explaining what this article is about.</p>
-                            <span class="article-date">29/07/2026</span>
-                        </div>
-                    </a>
-                    <a href="article4.html" class="article-card">
-                        <img src="images/article4.jpg" alt="Article thumbnail">
-                        <div class="article-content">
-                            <h3>My First Article Title</h3>
-                            <p>A quick summary explaining what this article is about.</p>
-                            <span class="article-date">29/07/2026</span>
-                        </div>
-                    </a>
+            <div class="filters">   <!-- Genre Buttons -->
+                <button data-category="All">All</button>
+                <button data-category="History">History</button>
+                </div>
+
+            <section id="search-results" style="display:none;"> <!-- Make results appear underneath -->
+                <h2>Search Results</h2>
+                <p id="no-results" style="display:none;">
+                    No articles found.
+                </p>
+                <section class="articles" id="search-container">
+                </section>
+            </section>
+
+            <hr>
+
+            <h1>Featured</h1>
+
+                <section class="articles" id="featured-container">   <!-- will refer to json -->
                 </section>
 
             <hr>
 
-            <h1>Latest</h1> <!-- use one h1 per page -->
+            <h1>Latest</h1>
+
+                <section class="articles" id="latest-container">    <!-- will refer to json -->
+                </section>
+
         </section>
     </main>
     <!-- --------------------------------------- -->
@@ -80,6 +78,8 @@
         <p>© 2026 Tabassum Sahar. All rights reserved.</p>
         <a href="https://www.linkedin.com/in/tabassum-sahar/" class="cta-button">Contact Me</a>
     </footer>
+
+    <script src="script.js"></script>
+
 </body>
-<!-- ------------------------------------------------------------------------------------ -->
 </html>
