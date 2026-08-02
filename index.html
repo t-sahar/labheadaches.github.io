@@ -1,85 +1,126 @@
-<!-- How to Save Manually
- git add index.html
- git commit -m "[whatever changes you made]"
- git push -->
+<!-- ------------------------------------------------------------------------------------ -->
+<!-- SETUP -->
+<!-- ------------------------------------------------------------------------------------ -->
+
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- ------------------------------------------------------------------------------------ -->
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- rescales to device size -->
-    <title>Lab Headaches</title>
-    <link rel="stylesheet" href="style.css">    <!-- links HTML to my CSS styling file -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">      <!-- rescales to device size -->
+    <title>Lab Headaches</title>                                                <!-- browser tab name -->
+    <link rel="stylesheet" href="style.css">                                    <!-- links HTML to CSS file -->
 </head>
 
 <!-- ------------------------------------------------------------------------------------ -->
+<!-- MAIN -->
+<!-- ------------------------------------------------------------------------------------ -->
+
 <body>
 
+    <!-- ------------------------------------------ -->
     <!-- Navigation Bar -->
-    <nav class="navbar">
-        <a href="index.html" class="logo">Lab Headaches</a>    <!-- makes the logo clickable -->
+    <!-- ------------------------------------------ -->
 
-        <div class="nav-links">    <!-- these point to pages I can create later in the same folder -->
+    <nav class="navbar">
+
+        <!-- makes logo link to homepage -->
+        <a href="index.html" class="logo">Lab Headaches</a>
+
+        <!-- more links to other pages -->
+        <div class="nav-links">
             <a href="archive.html">Archive</a>
             <a href="labdesensitisation.html">Lab Desensitisation</a>
         </div>
+
     </nav>
 
-    <!-- --------------------------------------- -->
-    <!-- Main Content Container -->
+    <!-- ------------------------------------------ -->
+    <!-- Main Page Content -->
+    <!-- ------------------------------------------ -->
+    
     <main class="container">
+
         <section class="hero">
 
             <p class="bio">I can possibly guarantee that no heads shall ache when reading through this website.</p>
 
             <hr>
             
-            <!-- Search Feature -->
+            <!-- --------------------- -->
+            <!-- Search Function -->
+            <!-- --------------------- -->
+            
             <input 
             type="text" 
             id="search-box" 
             placeholder="Search articles..."
             >
 
-            <div class="filters">   <!-- Genre Buttons -->
-                <button data-category="All">All</button>
-                <button data-category="History">History</button>
-                </div>
+            <!-- buttons to show categories -->
+            <div class="filters">
+                <button class="history" data-category="History">History</button>
+                <button class="methods" data-category="Methods">Methods</button>
+            </div>
 
-            <section id="search-results" style="display:none;"> <!-- Make results appear underneath -->
+            <div id="tag-filters"></div>
+
+            <!-- hide results until user searches -->
+            <section id="search-results" style="display:none;">
+
                 <h2>Search Results</h2>
+
+                <!-- message for no results -->
                 <p id="no-results" style="display:none;">
                     No articles found.
                 </p>
+
+                <!-- JavaScript will insert matching article cards here -->
                 <section class="articles" id="search-container">
                 </section>
+
             </section>
 
             <hr>
 
+            <!-- --------------------- -->
+            <!-- Featured Articles -->
+            <!-- --------------------- -->
+
             <h1>Featured</h1>
 
-                <section class="articles" id="featured-container">   <!-- will refer to json -->
-                </section>
+            <!-- .js will automatically insert featured article cards here -->
+            <section class="articles" id="featured-container">
+            </section>
 
             <hr>
 
+            <!-- --------------------- -->
+            <!-- Latest Articles -->
+            <!-- --------------------- -->
+
+            <!-- .js will automatically insert latest article cards here -->
             <h1>Latest</h1>
 
-                <section class="articles" id="latest-container">    <!-- will refer to json -->
-                </section>
+            <section class="articles" id="latest-container">
+            </section>
 
         </section>
+
     </main>
-    <!-- --------------------------------------- -->
-    <!-- Anchored Footer -->
+
+    <!-- ------------------------------------------ -->
+    <!-- Footer -->
+    <!-- ------------------------------------------ -->
+
     <footer class="site-footer">
         <p>© 2026 Tabassum Sahar. All rights reserved.</p>
         <a href="https://www.linkedin.com/in/tabassum-sahar/" class="cta-button">Contact Me</a>
     </footer>
 
+    <!-- Loads the .js that adds search, filtering, and article cards -->
     <script src="script.js"></script>
 
 </body>
+
 </html>
