@@ -1,5 +1,7 @@
 /* ------------------------------------------------------------------------------------ */
-/* 1. Global Reset & Fonts */
+/* SETUP & FONTS */
+/* ------------------------------------------------------------------------------------ */
+
 * {
     margin: 0;
     padding: 0;
@@ -7,14 +9,15 @@
     font-family: system-ui, -apple-system, sans-serif;
 }
 
+/* to refer back to */
 :root {
-    --blue: #1B2A4A;
-    --cream: #FFF8E8;
+    --black: #333333;
     --white: #FFFFFF;
+    --cream: #FFF8E8;
     --paper: #EDD1B0;
     --green: #7D9D85;
-    --black: #333333;
     --lblue: #3A86FF;
+    --dblue: #1B2A4A;
     --brown: #4A3A32;
 }
 
@@ -25,7 +28,20 @@ body {
 }
 
 /* ------------------------------------------------------------------------------------ */
-/* 2. Navigation Bar Styling */
+/* DIVIDER STYLING */
+/* ------------------------------------------------------------------------------------ */
+
+hr {
+  border: none;                      /* removes default browser style */
+  height: 1px;
+  background-color: var(--brown);
+  margin: 30px 0;
+}
+
+/* ------------------------------------------------------------------------------------ */
+/* NAVBAR STYLING */
+/* ------------------------------------------------------------------------------------ */
+
 .navbar,
 .site-footer {
     background-color: var(--brown);
@@ -62,7 +78,9 @@ body {
 }
 
 /* ------------------------------------------------------------------------------------ */
-/* 3. Main Layout Container */
+/* MAIN CONTENT STYLING */
+/* ------------------------------------------------------------------------------------ */
+
 .container {
     max-width: 1200px;
     width: 95%;
@@ -70,7 +88,9 @@ body {
 }
 
 /* ------------------------------------------------------------------------------------ */
-/* 4. Text & Button Styling */
+/* TEXT & BUTTON STYLING */
+/* ------------------------------------------------------------------------------------ */
+
 .hero h1 {
     font-size: clamp(2.2rem, 5vw, 3rem);
     font-weight: 800;
@@ -104,8 +124,39 @@ body {
     background-color: #688671;
 }
 
+/* ------------------------------------------ */
+/* search bar category button styling */
+/* ------------------------------------------ */
+
+.filters {
+    display: flex;
+    gap: 0.5rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+}
+
+.filters button,
+#tag-filters button {
+    padding: 4px 10px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: 0.2s;
+    color: var(--black);
+}
+
+#tag-filters {
+    display: flex;
+    gap: 0.5rem;
+    margin: 0.5rem 0 1rem 1rem;
+    flex-wrap: wrap;
+}
+
 /* ------------------------------------------------------------------------------------ */
-/* 5. Header & Footer Layout Styling */
+/* HEADER & FOOTER STYLING */
+/* ------------------------------------------------------------------------------------ */
 
 .site-footer {
     display: flex;
@@ -122,7 +173,8 @@ body {
 }
 
 /* ------------------------------------------------------------------------------------ */
-/* 6. Article Cards */
+/* ARTICLE CARD STYLING */
+/* ------------------------------------------------------------------------------------ */
 
 .articles {
     display: flex;
@@ -172,6 +224,13 @@ body {
     color: inherit;
 }
 
+.card-footer {                  /* makes each card have a set footer for date and categories */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
 .article-date {
     display: block;
     text-align: right;
@@ -180,18 +239,52 @@ body {
     color: #8A7B6D;
 }
 
-/* ------------------------------------------------------------------------------------ */
-/* 7. Dividers */
+/* ------------------------------------------ */
+/* search button category & tag styling */
+/* ------------------------------------------ */
 
-hr {
-  border: none;               /* Removes the default ugly browser style */
-  height: 1px;               /* Keeps the divider crisp and thin */
-  background-color: var(--brown); /* Matches your pale card border color */
-  margin: 30px 0;            /* Adds a clean 30px spacing above and below the line */
+.category-badge {               /* makes categories have a coloured background */
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 999px;
+    background: #d9c5a5;
+    color: var(--black);
+    margin-top: 0.5rem;
+}
+
+.filters button:hover,              /* jumpy jump */
+#tag-filters button:hover {
+    transform: translateY(-1px);
+    opacity: 0.9;
+}
+
+.filters button.active,               /* shows which are active */
+#tag-filters button.active {
+    outline: 2px solid #333;
+}
+
+#tag-filters button {
+    font-size: 0.75rem;
+}
+
+/* --------------------- */
+/* category & child tag colours */
+/* --------------------- */
+
+.history {
+    background: #fdc752;
+    color: #5b3d1d;
+}
+.methods {
+    background: #afc9e7;
+    color: #5b3d1d;
 }
 
 /* ------------------------------------------------------------------------------------ */
-/* 8. Article Pages */
+/* ARTICLE PAGE (.html) STYLING */
+/* ------------------------------------------------------------------------------------ */
 
 .article-page {
     max-width: 800px;
