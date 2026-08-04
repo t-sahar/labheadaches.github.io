@@ -39,74 +39,78 @@
     <!-- Main Page Content -->
     <!-- ------------------------------------------ -->
     
-    <main class="container">
+    <main>
+        
+        <div class="container">
 
-        <section class="hero">
+            <section class="hero">
 
-            <p class="bio">I can possibly guarantee that no heads shall ache when reading through this website.</p>
+                <p class="bio">Articles that will distract you from your lab-induced headache (not yet clinically proven).</p>
 
-            <hr>
-            
-            <!-- --------------------- -->
-            <!-- Search Function -->
-            <!-- --------------------- -->
-            
-            <input 
-            type="text" 
-            id="search-box" 
-            placeholder="Search articles..."
-            >
+                <hr>
+                
+                <!-- --------------------- -->
+                <!-- Search Function -->
+                <!-- --------------------- -->
+                
+                <input 
+                type="text" 
+                id="search-box" 
+                placeholder="Search articles..."
+                >
 
-            <!-- buttons to show categories -->
-            <div class="filters">
-                <button class="history" data-category="History">History</button>
-                <button class="methods" data-category="Methods">Methods</button>
-            </div>
+                <!-- buttons to show categories -->
+                <div class="filters">
+                    <button class="history" data-category="History">History</button>
+                    <button class="methods" data-category="Methods">Methods</button>
+                </div>
 
-            <div id="tag-filters"></div>
+                <div id="tag-filters"></div>
 
-            <!-- hide results until user searches -->
-            <section id="search-results" style="display:none;">
+                <!-- hide results until user searches -->
+                <section id="search-results" style="display:none;">
 
-                <h2>Search Results</h2>
+                    <h2>Search Results</h2>
 
-                <!-- message for no results -->
-                <p id="no-results" style="display:none;">
-                    No articles found.
-                </p>
+                    <!-- message for no results -->
+                    <p id="no-results" style="display:none;">
+                        No articles found.
+                    </p>
 
-                <!-- JavaScript will insert matching article cards here -->
-                <section class="articles" id="search-container">
+                    <!-- JavaScript will insert matching article cards here -->
+                    <section class="articles" id="search-container">
+                    </section>
+
+                </section>
+
+                <hr>
+
+                <!-- --------------------- -->
+                <!-- Featured Articles -->
+                <!-- --------------------- -->
+
+                <h1>Featured</h1>
+
+                <!-- .js will automatically insert featured article cards here -->
+                <section class="articles" id="featured-container">
+                </section>
+
+                <hr>
+
+                <!-- --------------------- -->
+                <!-- Latest Articles -->
+                <!-- --------------------- -->
+
+                <!-- .js will automatically insert latest article cards here -->
+                <h1>Latest</h1>
+
+                <section class="articles" id="latest-container">
                 </section>
 
             </section>
 
-            <hr>
-
-            <!-- --------------------- -->
-            <!-- Featured Articles -->
-            <!-- --------------------- -->
-
-            <h1>Featured</h1>
-
-            <!-- .js will automatically insert featured article cards here -->
-            <section class="articles" id="featured-container">
-            </section>
-
-            <hr>
-
-            <!-- --------------------- -->
-            <!-- Latest Articles -->
-            <!-- --------------------- -->
-
-            <!-- .js will automatically insert latest article cards here -->
-            <h1>Latest</h1>
-
-            <section class="articles" id="latest-container">
-            </section>
-
-        </section>
-
+        </div>
+        
     </main>
 
     <!-- ------------------------------------------ -->

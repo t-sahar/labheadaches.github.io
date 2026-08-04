@@ -52,7 +52,8 @@ fetch("articles.json")
 
             return (
                 article.title.toLowerCase().includes(searchTerm) ||             //searches titles
-                article.category.toLowerCase().includes(searchTerm) ||          //searches categories
+                article.category.some(category =>
+                    category.toLowerCase().includes(searchTerm)) ||          //searches categories
                 article.tags.some(tag =>                                        //searches tags
                     tag.toLowerCase().includes(searchTerm)
                 )  
@@ -95,9 +96,11 @@ function createCard(article) {
 
                 <div class="card-footer">
 
-                    <span class="category-badge ${article.category.toLowerCase()}">
-                        ${article.category}
-                    </span>
+                    ${article.category.map(category => `
+                        <span class="category-badge ${category.toLowerCase()}">
+                        ${category}
+                        </span>
+                    `).join("")}
                     <span class="article-date">
                         ${article.displayDate}
                     </span>
@@ -156,19 +159,21 @@ function displayTags(category) {
 
     // find all articles in this category
     const categoryArticles = allArticles.filter(article =>
-        article.category === category
+        article.category.includes(category)
     );
 
     // collect unique tags
     const tags = [];
 
     categoryArticles.forEach(article => {
-        article.tags.forEach(tag => {
+    if (article.tags[category]) {
+        article.tags[category].forEach(tag => {
             if (!tags.includes(tag)) {
                 tags.push(tag);
             }
         });
-    });
+    }
+});
 
     // create buttons
     tags.forEach(tag => {
@@ -236,8 +241,14 @@ function updateSearchResults() {
     // filter by category
     if (selectedCategory !== null) {
         filteredArticles = filteredArticles.filter(article =>
-            article.category === selectedCategory
+            article.category.includes(selectedCategory)
 
+        );
+    }
+
+    if (selectedTag !== null) {
+        filteredArticles = filteredArticles.filter(article =>
+            article.tags.includes(selectedTag)
         );
     }
 
@@ -245,7 +256,8 @@ function updateSearchResults() {
     if (searchTerm !== "") {
         filteredArticles = filteredArticles.filter(article =>
             article.title.toLowerCase().includes(searchTerm) ||
-            article.category.toLowerCase().includes(searchTerm) ||
+            article.category.some(category =>
+                category.toLowerCase().includes(searchTerm)) ||
             article.tags.some(tag =>
                 tag.toLowerCase().includes(searchTerm)
 

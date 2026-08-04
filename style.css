@@ -19,12 +19,30 @@
     --lblue: #3A86FF;
     --dblue: #1B2A4A;
     --brown: #4A3A32;
+    --lbrown: #5b3d1d;
+}
+
+html {
+    background-color: var(--brown);
 }
 
 body {
-    background-color: var(--paper);
+    background-color: var(--brown);
     color: var(--black);
     line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+main {
+    background-color: var(--paper);
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
 /* ------------------------------------------------------------------------------------ */
@@ -77,15 +95,6 @@ hr {
     opacity: 0.8;
 }
 
-/* ------------------------------------------------------------------------------------ */
-/* MAIN CONTENT STYLING */
-/* ------------------------------------------------------------------------------------ */
-
-.container {
-    max-width: 1200px;
-    width: 95%;
-    margin: 0 auto;
-}
 
 /* ------------------------------------------------------------------------------------ */
 /* TEXT & BUTTON STYLING */
@@ -108,6 +117,9 @@ hr {
     margin-bottom: 40px;
 }
 
+/* --------------------- */
+/* Contact Me button */
+/* --------------------- */
 .cta-button {
     display: inline-block;
     background-color: var(--green);
@@ -125,11 +137,40 @@ hr {
 }
 
 /* ------------------------------------------ */
+/* search bar styling */
+/* ------------------------------------------ */
+
+#search-box {
+    width: 100%;
+    max-width: 500px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    color: var(--black);
+    background-color: var(--cream);
+    border: 2px solid transparent;
+    border-radius: 999px;
+    outline: none;
+    transition: 0.2s ease;
+    display: block;
+    margin: 0 auto;
+}
+
+#search-box::placeholder {
+    color: #8A7B6D;
+}
+
+#search-box:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(125, 157, 133, 0.2);
+}
+
+/* ------------------------------------------ */
 /* search bar category button styling */
 /* ------------------------------------------ */
 
 .filters {
     display: flex;
+    justify-content: center;
     gap: 0.5rem;
     margin: 1rem 0;
     flex-wrap: wrap;
@@ -149,6 +190,7 @@ hr {
 
 #tag-filters {
     display: flex;
+    justify-content: center;
     gap: 0.5rem;
     margin: 0.5rem 0 1rem 1rem;
     flex-wrap: wrap;
@@ -275,11 +317,11 @@ hr {
 
 .history {
     background: #fdc752;
-    color: #5b3d1d;
+    color: var(--black);
 }
 .methods {
     background: #afc9e7;
-    color: #5b3d1d;
+    color: var(--black);
 }
 
 /* ------------------------------------------------------------------------------------ */

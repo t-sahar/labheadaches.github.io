@@ -1,14 +1,22 @@
 [
   {
-    "title": "How to Find a King Under a Car Park",
+    "title": "How to Find a King From Under a Car Park",
     "description": "He was under there for 527 years.",
     "date": "2026-07-29",
     "displayDate": "29/07/2026",
-    "category": "History",
-    "tags": [
+    "category": [
+      "History",
+      "Methods"
+    ],
+    "tags": {
+      "History": [
       "Archaeology",
       "Middle Ages"
     ],
+    "Methods": [
+      "DNA Analysis"
+      ]
+    },
     "featured": true,
     "image": "king-car-park.jpg",
     "link": "king-car-park.html"
